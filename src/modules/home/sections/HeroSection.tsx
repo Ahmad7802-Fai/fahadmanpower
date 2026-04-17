@@ -14,7 +14,6 @@ export default function HeroSection() {
   const ref = useRef(null);
   const router = useRouter();
 
-  // 🎯 PARALLAX
   const { scrollYProgress } = useScroll({
     target: ref,
     offset: ["start start", "end start"],
@@ -22,16 +21,16 @@ export default function HeroSection() {
 
   const y = useTransform(scrollYProgress, [0, 1], [0, 120]);
   const scale = useTransform(scrollYProgress, [0, 1], [1, 1.1]);
-  
+
   return (
     <section
       ref={ref}
       className="relative h-[100vh] min-h-[700px] overflow-hidden"
     >
-      {/* 🔵 BASE BACKGROUND */}
+      {/* BACKGROUND */}
       <div className="absolute inset-0 bg-gradient-to-br from-sky-900 via-sky-700 to-sky-500" />
 
-      {/* 🖼️ IMAGE */}
+      {/* IMAGE */}
       <motion.div
         style={{ y, scale }}
         className="absolute inset-0 -translate-x-12"
@@ -41,26 +40,18 @@ export default function HeroSection() {
           alt="Professional Workforce"
           fill
           priority
-          className="
-            object-cover
-            object-[0%_center]
-            scale-125
-            grayscale
-            brightness-90
-            contrast-110
-          "
+          sizes="100vw"
+          className="object-cover scale-125 grayscale brightness-90"
         />
 
-        {/* 🔥 OVERLAY */}
-        <div className="absolute inset-0 bg-black/50" />
+        {/* OVERLAY */}
+        <div className="absolute inset-0 bg-black/60" />
         <div className="absolute inset-0 bg-gradient-to-r from-black via-black/40 to-transparent" />
-        <div className="absolute inset-0 bg-sky-700/30 mix-blend-multiply" />
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_50%,rgba(14,165,233,0.35),transparent_60%)]" />
       </motion.div>
 
-      {/* ✨ CONTENT */}
+      {/* CONTENT */}
       <div className="relative z-10 flex items-center h-full">
-        <div className="w-full md:w-1/2 ml-auto px-6 md:px-12">
+        <div className="w-full md:w-1/2 ml-auto px-6 md:px-12 text-white">
 
           <motion.div
             initial="hidden"
@@ -69,48 +60,39 @@ export default function HeroSection() {
               hidden: {},
               show: { transition: { staggerChildren: 0.2 } },
             }}
-            className="text-white"
           >
 
-            {/* LABEL */}
-            <motion.p
+            {/* 🔥 TRUST BADGE */}
+            <motion.div
               variants={{
-                hidden: { opacity: 0, y: 20 },
+                hidden: { opacity: 0, y: 10 },
                 show: { opacity: 1, y: 0 },
               }}
-              className="uppercase tracking-[0.3em] text-xs text-white/70 mb-4"
+              className="
+                inline-flex items-center gap-2
+                px-4 py-2 mb-6
+                rounded-full
+                bg-white/10 backdrop-blur
+                text-xs text-white/80
+                border border-white/20
+              "
             >
-              TRUSTED MANPOWER SOLUTION
-            </motion.p>
+              ⭐ Trusted by 150+ Global Companies
+            </motion.div>
 
-            {/* 🔥 HEADLINE */}
+            {/* HEADLINE */}
             <motion.h1
               variants={{
                 hidden: { opacity: 0, y: 40 },
                 show: { opacity: 1, y: 0 },
               }}
-              className="
-                text-3xl sm:text-4xl md:text-5xl lg:text-6xl
-                font-bold leading-tight
-                drop-shadow-[0_5px_20px_rgba(0,0,0,0.6)]
-              "
+              className="text-4xl md:text-6xl font-bold leading-tight"
             >
               Hire Skilled Workforce <br />
-              For Your Business Growth
+              <span className="text-[var(--primary)]">
+                Fast & Reliable
+              </span>
             </motion.h1>
-
-            {/* 💣 TRUST */}
-            <motion.div
-              variants={{
-                hidden: { opacity: 0, y: 20 },
-                show: { opacity: 1, y: 0 },
-              }}
-              className="mt-6 flex flex-wrap gap-4 text-sm text-white/80"
-            >
-              <span>✔ 2000+ Workers Deployed</span>
-              <span>✔ 150+ Global Clients</span>
-              <span>✔ Fast Recruitment</span>
-            </motion.div>
 
             {/* SUBTEXT */}
             <motion.p
@@ -118,73 +100,77 @@ export default function HeroSection() {
                 hidden: { opacity: 0, y: 30 },
                 show: { opacity: 1, y: 0 },
               }}
-              className="mt-6 text-sm md:text-base text-white/80 max-w-lg"
+              className="mt-6 text-white/80 max-w-lg"
             >
-              We deliver reliable and professional manpower solutions 
-              to help companies scale faster with the right people.
+              Get pre-screened, job-ready workers within days.
+              Trusted manpower solutions for global industries.
             </motion.p>
 
-            {/* 🔘 BUTTON */}
+            {/* 💣 STATS */}
+            <motion.div
+              variants={{
+                hidden: { opacity: 0, y: 20 },
+                show: { opacity: 1, y: 0 },
+              }}
+              className="mt-6 flex gap-6 text-sm"
+            >
+              <span>✔ 2000+ Workers</span>
+              <span>✔ 150+ Clients</span>
+              <span>✔ 25+ Years Experience</span>
+            </motion.div>
+
+            {/* 🔥 CTA */}
             <motion.div
               variants={{
                 hidden: { opacity: 0, y: 30 },
                 show: { opacity: 1, y: 0 },
               }}
-              className="mt-8 flex flex-wrap gap-4"
+              className="mt-10 flex flex-wrap gap-4"
             >
-              {/* PRIMARY (FIXED) */}
               <Button
                 size="lg"
+                variant="gradient"
+                leftIcon="💬"
                 onClick={() =>
-                    window.open(
+                  window.open(
                     "https://wa.me/6282260252836?text=Hello, I want to hire workers",
                     "_blank"
-                    )
+                  )
                 }
-                className="
-                    bg-[var(--primary)]
-                    text-white
-                    hover:bg-[var(--primary-dark)]
-                    font-semibold
-                    shadow-lg
-                "
-                >
-                💬 Hire Workers Now
-                </Button>
+              >
+                Hire Workers Now
+              </Button>
 
-              {/* SECONDARY */}
               <Button
                 variant="outline"
                 size="lg"
+                rightIcon="→"
                 onClick={() => router.push("/services")}
-                className="
-                    border-white/30
-                    text-white
-                    hover:bg-white/10
-                "
-                >
+                className="border-white/30 text-white hover:bg-white/10"
+              >
                 View Services
-                </Button>
+              </Button>
             </motion.div>
 
-            {/* MICRO COPY */}
-            <p className="mt-3 text-xs text-white/60">
-              Get qualified candidates in just a few days
-            </p>
+            {/* ⚠️ URGENCY */}
+            <motion.p
+              variants={{
+                hidden: { opacity: 0 },
+                show: { opacity: 1 },
+              }}
+              className="mt-4 text-xs text-yellow-300"
+            >
+              ⚡ Limited slots available this month
+            </motion.p>
 
           </motion.div>
         </div>
       </div>
 
-      {/* 🔽 SCROLL */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 1 }}
-        className="absolute bottom-6 left-1/2 -translate-x-1/2 text-white/70 text-xs"
-      >
-        <div className="animate-bounce">↓ Scroll</div>
-      </motion.div>
+      {/* SCROLL */}
+      <div className="absolute bottom-6 left-1/2 -translate-x-1/2 text-white/70 text-xs animate-bounce">
+        ↓ Scroll
+      </div>
     </section>
   );
 }
