@@ -30,7 +30,7 @@ export default function Footer() {
 
             {/* CTA */}
             <a
-              href="https://wa.me/6281234567890"
+              href="https://wa.me/6282260252836"
               target="_blank"
               className="
                 inline-block mt-8 px-6 py-3
@@ -77,7 +77,7 @@ export default function Footer() {
             <div className="space-y-3 text-sm text-gray-400">
               <p>📍 Jakarta, Indonesia</p>
               <p>✉️ info@fahadmanpower.com</p>
-              <p>📞 +62 812 3456 7890</p>
+              <p>📞 +6221-29361198</p>
 
               <p className="text-xs text-gray-500 pt-4">
                 Available for global recruitment partnerships.
@@ -101,7 +101,7 @@ export default function Footer() {
 
           {/* LEFT */}
           <p className="text-sm text-white/60">
-            © {new Date().getFullYear()} Fahad Manpower
+            © {new Date().getFullYear()} Fahad Fajar Mustika Manpower
           </p>
 
           {/* CENTER */}

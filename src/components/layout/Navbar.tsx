@@ -56,7 +56,7 @@ export default function Navbar() {
             {/* TEXT */}
             <div className="leading-tight">
                 <p className={`font-bold text-sm ${scrolled ? "text-black" : "text-white"}`}>
-                Fahad
+                Fahad Fajar Mustika
                 </p>
                 <p className="text-[var(--primary)] font-bold text-sm">
                 Manpower
@@ -99,7 +99,7 @@ export default function Navbar() {
         {/* 💎 CTA */}
         <div className="hidden md:block">
           <a
-            href="https://wa.me/6281234567890"
+            href="https://wa.me/6282260252836"
             target="_blank"
             className="
               relative px-5 py-2 rounded-xl text-sm font-semibold

@@ -1,9 +1,9 @@
-type Props = {
-  children: React.ReactNode;
+import { ButtonHTMLAttributes } from "react";
+
+type Props = ButtonHTMLAttributes<HTMLButtonElement> & {
   variant?: "primary" | "outline" | "soft";
   size?: "sm" | "md" | "lg";
   full?: boolean;
-  className?: string;
 };
 
 export default function Button({
@@ -12,6 +12,7 @@ export default function Button({
   size = "md",
   full = false,
   className = "",
+  ...props
 }: Props) {
   const variants = {
     primary:
@@ -30,6 +31,8 @@ export default function Button({
 
   return (
     <button
+      type="button"
+      {...props} // 🔥 INI KUNCI NYA
       className={`
         rounded-xl font-medium transition-all duration-300
         ${variants[variant]}

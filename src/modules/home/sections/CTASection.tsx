@@ -63,7 +63,7 @@ export default function CTASection() {
             <div className="mt-8 flex justify-center gap-4 flex-wrap">
 
               <a
-                href="https://wa.me/6281234567890"
+                href="https://wa.me/6282260252836"
                 target="_blank"
                 className="
                   px-6 py-3 rounded-xl

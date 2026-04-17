@@ -91,7 +91,7 @@ export default function ServicesList() {
           </p>
 
           <a
-            href="https://wa.me/6281234567890"
+            href="https://wa.me/6282260252836"
             target="_blank"
             className="
               inline-block mt-4 px-6 py-3

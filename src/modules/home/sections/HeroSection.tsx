@@ -8,9 +8,11 @@ import {
 } from "framer-motion";
 import { useRef } from "react";
 import Button from "@/components/ui/Button";
+import { useRouter } from "next/navigation";
 
 export default function HeroSection() {
   const ref = useRef(null);
+  const router = useRouter();
 
   // 🎯 PARALLAX
   const { scrollYProgress } = useScroll({
@@ -20,7 +22,7 @@ export default function HeroSection() {
 
   const y = useTransform(scrollYProgress, [0, 1], [0, 120]);
   const scale = useTransform(scrollYProgress, [0, 1], [1, 1.1]);
-
+  
   return (
     <section
       ref={ref}
@@ -133,29 +135,36 @@ export default function HeroSection() {
               {/* PRIMARY (FIXED) */}
               <Button
                 size="lg"
+                onClick={() =>
+                    window.open(
+                    "https://wa.me/6282260252836?text=Hello, I want to hire workers",
+                    "_blank"
+                    )
+                }
                 className="
-                  bg-[var(--primary)]
-                  text-white
-                  hover:bg-[var(--primary-dark)]
-                  font-semibold
-                  shadow-lg
+                    bg-[var(--primary)]
+                    text-white
+                    hover:bg-[var(--primary-dark)]
+                    font-semibold
+                    shadow-lg
                 "
-              >
-                Hire Workers Now
-              </Button>
+                >
+                💬 Hire Workers Now
+                </Button>
 
               {/* SECONDARY */}
               <Button
                 variant="outline"
                 size="lg"
+                onClick={() => router.push("/services")}
                 className="
-                  border-white/30
-                  text-white
-                  hover:bg-white/10
+                    border-white/30
+                    text-white
+                    hover:bg-white/10
                 "
-              >
+                >
                 View Services
-              </Button>
+                </Button>
             </motion.div>
 
             {/* MICRO COPY */}
