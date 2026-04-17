@@ -1,0 +1,165 @@
+@import "tailwindcss";
+
+/* ============================= */
+/* 🎨 ROOT COLOR SYSTEM */
+/* ============================= */
+:root {
+  /* Primary (biru manpower) */
+  --primary: #0ea5e9;
+  --primary-dark: #0284c7;
+  --primary-light: #38bdf8;
+
+  /* Accent (optional - orange dari profile) */
+  --accent: #f59e0b;
+  --accent-dark: #d97706;
+
+  /* Neutral */
+  --bg: #f8fafc;
+  --card: #ffffff;
+  --border: #e5e7eb;
+
+  /* Text */
+  --text: #0f172a;
+  --text-muted: #64748b;
+}
+
+/* ============================= */
+/* 🧱 BASE STYLE */
+/* ============================= */
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Inter', sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ============================= */
+/* 📦 LAYOUT */
+/* ============================= */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* ============================= */
+/* 🔘 BUTTON SYSTEM */
+/* ============================= */
+.btn {
+  padding: 12px 20px;
+  border-radius: 12px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+/* Primary */
+.btn-primary {
+  background: var(--primary);
+  color: white;
+}
+
+.btn-primary:hover {
+  background: var(--primary-dark);
+}
+
+/* Outline */
+.btn-outline {
+  border: 1px solid var(--primary);
+  color: var(--primary);
+  background: transparent;
+}
+
+.btn-outline:hover {
+  background: var(--primary);
+  color: white;
+}
+
+/* Soft (blande / subtle) */
+.btn-soft {
+  background: rgba(14, 165, 233, 0.1);
+  color: var(--primary);
+}
+
+.btn-soft:hover {
+  background: rgba(14, 165, 233, 0.2);
+}
+
+/* ============================= */
+/* 🧊 CARD SYSTEM */
+/* ============================= */
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 24px;
+  transition: all 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+
+/* ============================= */
+/* 🧾 TEXT STYLE */
+/* ============================= */
+.heading {
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.subheading {
+  font-size: 1.1rem;
+  color: var(--text-muted);
+}
+
+/* ============================= */
+/* 🌈 SECTION */
+/* ============================= */
+.section {
+  padding: 80px 0;
+}
+
+.section-light {
+  background: white;
+}
+
+.section-dark {
+  background: var(--primary);
+  color: white;
+}
+
+/* ============================= */
+/* ✨ HERO BACKGROUND */
+/* ============================= */
+.bg-hero {
+  background: linear-gradient(
+    135deg,
+    #0ea5e9 0%,
+    #0284c7 50%,
+    #0369a1 100%
+  );
+  color: white;
+}
+
+/* ============================= */
+/* 🧩 UTILITIES */
+/* ============================= */
+.text-muted {
+  color: var(--text-muted);
+}
+
+.border-default {
+  border: 1px solid var(--border);
+}
