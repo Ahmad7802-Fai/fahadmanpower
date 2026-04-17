@@ -4,73 +4,110 @@ import { motion } from "framer-motion";
 
 export default function CTASection() {
   return (
-    <section className="section relative overflow-hidden">
+    <section className="relative py-32">
 
-      {/* 🔵 BACKGROUND */}
-      <div className="
-        absolute inset-0
-        bg-gradient-to-r
-        from-[var(--primary)]
-        to-[var(--primary-dark)]
-      " />
+      <div className="container">
 
-      {/* ✨ GLOW */}
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,rgba(255,255,255,0.15),transparent_60%)]" />
+        <div className="
+          relative overflow-hidden rounded-3xl
+          px-6 py-16 md:py-20 text-center
+        ">
 
-      <div className="container relative z-10 text-center">
+          {/* 🔵 BACKGROUND */}
+          <div className="
+            absolute inset-0
+            bg-gradient-to-r
+            from-[var(--primary)]
+            to-[var(--primary-dark)]
+          " />
 
-        {/* CONTENT */}
-        <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
-        >
+          {/* ✨ GLOW */}
+          <div className="
+            absolute inset-0
+            bg-[radial-gradient(circle_at_30%_50%,rgba(255,255,255,0.2),transparent_60%)]
+          " />
 
-          {/* TITLE */}
-          <h2 className="text-3xl md:text-4xl font-bold text-white">
-            Let’s Build Your Workforce Today
-          </h2>
+          {/* ✨ EXTRA LIGHT */}
+          <div className="
+            absolute inset-0 opacity-20 blur-3xl
+            bg-white
+          " />
 
-          {/* SUBTITLE */}
-          <p className="mt-4 text-white/80 max-w-2xl mx-auto">
-            Partner with us to find the right talent for your business.
-            Fast, reliable, and professional recruitment solutions.
-          </p>
+          {/* CONTENT */}
+          <motion.div
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="relative z-10 text-white"
+          >
 
-          {/* BUTTON */}
-          <div className="mt-8 flex justify-center gap-4 flex-wrap">
+            {/* 🔥 LABEL */}
+            <p className="uppercase tracking-[0.3em] text-xs text-white/70 mb-4">
+              START NOW
+            </p>
 
-            {/* WHATSAPP BUTTON */}
-            <a
-              href="https://wa.me/628XXXXXXXXXX"
-              target="_blank"
-              className="
-                btn
-                bg-white text-[var(--primary)]
-                hover:bg-gray-100
-                font-semibold
-              "
-            >
-              💬 Contact via WhatsApp
-            </a>
+            {/* 💣 HEADLINE (JUALAN) */}
+            <h2 className="text-3xl md:text-4xl font-bold leading-tight">
+              Start Hiring Skilled Workers <br />
+              For Your Business Today
+            </h2>
 
-            {/* SECONDARY */}
-            <a
-              href="#services"
-              className="
-                btn
-                border border-white/30
-                text-white
-                hover:bg-white/10
-              "
-            >
-              View Services
-            </a>
+            {/* 🔥 URGENCY */}
+            <p className="mt-4 text-white/90 max-w-2xl mx-auto">
+              Get qualified candidates in just a few days. 
+              Fast process, reliable workforce, and guaranteed quality.
+            </p>
 
-          </div>
+            {/* 💣 TRUST MINI */}
+            <div className="mt-6 flex justify-center flex-wrap gap-4 text-sm text-white/80">
+              <span>✔ 500+ Workers</span>
+              <span>✔ 50+ Clients</span>
+              <span>✔ Fast Deployment</span>
+            </div>
 
-        </motion.div>
+            {/* 🔘 BUTTON */}
+            <div className="mt-10 flex justify-center gap-4 flex-wrap">
+
+              {/* 🔥 PRIMARY (WAJIB MENONJOL) */}
+              <a
+                href="https://wa.me/6281234567890"
+                target="_blank"
+                className="
+                  px-7 py-3 rounded-xl
+                  bg-white text-[var(--primary)]
+                  font-semibold
+                  shadow-xl
+                  hover:scale-105 hover:bg-gray-100
+                  transition
+                "
+              >
+                💬 Hire Workers Now
+              </a>
+
+              {/* SECONDARY */}
+              <a
+                href="/services"
+                className="
+                  px-7 py-3 rounded-xl
+                  border border-white/40
+                  text-white
+                  hover:bg-white/10
+                  transition
+                "
+              >
+                Explore Services
+              </a>
+
+            </div>
+
+            {/* 🔻 MICRO COPY (PSYCHOLOGICAL) */}
+            <p className="mt-4 text-xs text-white/70">
+              Free consultation • No obligation • Fast response
+            </p>
+
+          </motion.div>
+
+        </div>
       </div>
     </section>
   );

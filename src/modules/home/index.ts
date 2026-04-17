@@ -3,3 +3,4 @@ export { default as ServicesSection } from "./sections/ServicesSection";
 export { default as ProcessSection } from "./sections/ProcessSection";
 export { default as IndustriesSection } from "./sections/IndustriesSection";
 export { default as CTASection } from "./sections/CTASection";
+export { default as ClientLogoSection } from "./sections/ClientLogoSection";

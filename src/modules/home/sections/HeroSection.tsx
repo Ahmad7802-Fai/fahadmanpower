@@ -12,13 +12,12 @@ import Button from "@/components/ui/Button";
 export default function HeroSection() {
   const ref = useRef(null);
 
-  // ✅ SCROLL BASED ON HERO SECTION
+  // 🎯 PARALLAX
   const { scrollYProgress } = useScroll({
     target: ref,
     offset: ["start start", "end start"],
   });
 
-  // ✅ PARALLAX EFFECT
   const y = useTransform(scrollYProgress, [0, 1], [0, 120]);
   const scale = useTransform(scrollYProgress, [0, 1], [1, 1.1]);
 
@@ -27,7 +26,7 @@ export default function HeroSection() {
       ref={ref}
       className="relative h-[100vh] min-h-[700px] overflow-hidden"
     >
-      {/* 🔵 BACKGROUND GRADIENT */}
+      {/* 🔵 BASE BACKGROUND */}
       <div className="absolute inset-0 bg-gradient-to-br from-sky-900 via-sky-700 to-sky-500" />
 
       {/* 🖼️ IMAGE */}
@@ -50,20 +49,11 @@ export default function HeroSection() {
           "
         />
 
-        {/* DARK OVERLAY */}
+        {/* 🔥 OVERLAY */}
         <div className="absolute inset-0 bg-black/50" />
-
-        {/* LEFT GRADIENT */}
         <div className="absolute inset-0 bg-gradient-to-r from-black via-black/40 to-transparent" />
-
-        {/* BLUE BLEND */}
         <div className="absolute inset-0 bg-sky-700/30 mix-blend-multiply" />
-
-        {/* RADIAL LIGHT */}
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_50%,rgba(14,165,233,0.35),transparent_60%)]" />
-
-        {/* BLUR DEPTH */}
-        <div className="absolute inset-0 backdrop-blur-[2px]" />
       </motion.div>
 
       {/* ✨ CONTENT */}
@@ -75,11 +65,7 @@ export default function HeroSection() {
             animate="show"
             variants={{
               hidden: {},
-              show: {
-                transition: {
-                  staggerChildren: 0.2,
-                },
-              },
+              show: { transition: { staggerChildren: 0.2 } },
             }}
             className="text-white"
           >
@@ -92,25 +78,37 @@ export default function HeroSection() {
               }}
               className="uppercase tracking-[0.3em] text-xs text-white/70 mb-4"
             >
-              FAHAD MANPOWER
+              TRUSTED MANPOWER SOLUTION
             </motion.p>
 
-            {/* HEADLINE */}
+            {/* 🔥 HEADLINE */}
             <motion.h1
               variants={{
                 hidden: { opacity: 0, y: 40 },
                 show: { opacity: 1, y: 0 },
               }}
               className="
-                text-3xl sm:text-4xl md:text-5xl lg:text-6xl 
+                text-3xl sm:text-4xl md:text-5xl lg:text-6xl
                 font-bold leading-tight
                 drop-shadow-[0_5px_20px_rgba(0,0,0,0.6)]
               "
             >
-              BUSINESS SUCCESS <br />
-              IS DRIVEN BY <br />
-              HUMAN RESOURCES
+              Hire Skilled Workforce <br />
+              For Your Business Growth
             </motion.h1>
+
+            {/* 💣 TRUST */}
+            <motion.div
+              variants={{
+                hidden: { opacity: 0, y: 20 },
+                show: { opacity: 1, y: 0 },
+              }}
+              className="mt-6 flex flex-wrap gap-4 text-sm text-white/80"
+            >
+              <span>✔ 500+ Workers Deployed</span>
+              <span>✔ 50+ Global Clients</span>
+              <span>✔ Fast Recruitment</span>
+            </motion.div>
 
             {/* SUBTEXT */}
             <motion.p
@@ -120,11 +118,11 @@ export default function HeroSection() {
               }}
               className="mt-6 text-sm md:text-base text-white/80 max-w-lg"
             >
-              We provide professional workforce solutions to help businesses
-              grow and succeed with the right human resources.
+              We deliver reliable and professional manpower solutions 
+              to help companies scale faster with the right people.
             </motion.p>
 
-            {/* BUTTONS */}
+            {/* 🔘 BUTTON */}
             <motion.div
               variants={{
                 hidden: { opacity: 0, y: 30 },
@@ -132,18 +130,21 @@ export default function HeroSection() {
               }}
               className="mt-8 flex flex-wrap gap-4"
             >
+              {/* PRIMARY (FIXED) */}
               <Button
                 size="lg"
                 className="
-                  backdrop-blur-md
-                  bg-white/10
-                  hover:bg-white/20
-                  border border-white/20
+                  bg-[var(--primary)]
+                  text-white
+                  hover:bg-[var(--primary-dark)]
+                  font-semibold
+                  shadow-lg
                 "
               >
-                Contact Us
+                Hire Workers Now
               </Button>
 
+              {/* SECONDARY */}
               <Button
                 variant="outline"
                 size="lg"
@@ -151,18 +152,22 @@ export default function HeroSection() {
                   border-white/30
                   text-white
                   hover:bg-white/10
-                  backdrop-blur-md
                 "
               >
                 View Services
               </Button>
             </motion.div>
 
+            {/* MICRO COPY */}
+            <p className="mt-3 text-xs text-white/60">
+              Get qualified candidates in just a few days
+            </p>
+
           </motion.div>
         </div>
       </div>
 
-      {/* 🔽 SCROLL INDICATOR */}
+      {/* 🔽 SCROLL */}
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}

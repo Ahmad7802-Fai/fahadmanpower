@@ -5,22 +5,22 @@ export const industries = [
   },
   {
     title: "Oil & Gas",
-    image: "/asset/industries/oil-gas.jpg",
+    image: "/asset/industries/oil.jpg",
   },
   {
     title: "Hospitality",
     image: "/asset/industries/hospitality.jpg",
   },
   {
-    title: "Cruise Line",
-    image: "/asset/industries/cruise.jpg",
-  },
-  {
     title: "Healthcare",
     image: "/asset/industries/healthcare.jpg",
   },
   {
-    title: "Manufacturing",
-    image: "/asset/industries/manufacturing.jpg",
+    title: "Marine & Cruise",
+    image: "/asset/industries/marine.jpg",
+  },
+  {
+    title: "General Workforce",
+    image: "/asset/industries/workforce.jpg",
   },
 ];

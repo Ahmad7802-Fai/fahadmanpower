@@ -1,5 +1,6 @@
 import {
   HeroSection,
+  ClientLogoSection, // 👈 TAMBAH INI
   ServicesSection,
   ProcessSection,
   IndustriesSection,
@@ -10,6 +11,10 @@ export default function HomePage() {
   return (
     <>
       <HeroSection />
+
+      {/* 🔥 TRUST BOOSTER */}
+      <ClientLogoSection />
+
       <ServicesSection />
       <ProcessSection />
       <IndustriesSection />
