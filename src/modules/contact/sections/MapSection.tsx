@@ -4,10 +4,9 @@ export default function MapSection() {
       <div className="container">
 
         <iframe
-          src="https://maps.google.com/maps?q=jakarta&t=&z=13&ie=UTF8&iwloc=&output=embed"
-          className="w-full h-[400px] rounded-2xl border-0"
-          loading="lazy"
-        />
+            src="https://www.google.com/maps?q=Jakarta&output=embed"
+            className="w-full h-[400px] rounded-2xl mt-16"
+            />
 
       </div>
     </section>

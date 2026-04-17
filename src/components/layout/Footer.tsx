@@ -4,50 +4,52 @@ import Link from "next/link";
 
 export default function Footer() {
   return (
-    <footer className="relative mt-32 text-white overflow-hidden">
+    <footer className="relative mt-10 text-white overflow-hidden">
 
-      {/* 🔥 DIVIDER TOP (BIAR GA NYATU) */}
-      <div className="w-full h-[1px] bg-gradient-to-r from-transparent via-white/20 to-transparent mb-12" />
-
-      {/* 🔵 BACKGROUND */}
+      {/* BACKGROUND */}
       <div className="absolute inset-0 bg-gray-950" />
 
-      {/* ✨ GLOW */}
+      {/* GLOW */}
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(14,165,233,0.15),transparent_60%)]" />
 
-      <div className="container relative z-10 py-16">
+      {/* 💎 MAIN CONTENT */}
+      <div className="container relative z-10 pt-28 pb-36">
 
-        <div className="grid gap-10 md:grid-cols-4">
+        <div className="grid mt-10 gap-14 md:grid-cols-4">
 
-          {/* 🔥 BRAND */}
+          {/* BRAND */}
           <div>
-            <h2 className="font-bold text-xl">
+            <h2 className="font-bold text-2xl">
               Fahad<span className="text-[var(--primary)]">Manpower</span>
             </h2>
 
-            <p className="text-sm text-gray-400 mt-4 leading-relaxed">
-              Professional manpower solutions to support business growth
-              with reliable and skilled workforce.
+            <p className="text-gray-400 mt-5 leading-relaxed">
+              Delivering professional manpower solutions to support global
+              business growth with reliable, skilled, and trusted workforce.
             </p>
 
+            {/* CTA */}
             <a
               href="https://wa.me/6281234567890"
               target="_blank"
               className="
-                inline-block mt-4 text-sm
-                text-[var(--primary)]
-                hover:underline
+                inline-block mt-8 px-6 py-3
+                rounded-xl
+                bg-[var(--primary)]
+                text-white text-sm font-semibold
+                shadow-lg
+                hover:opacity-90 transition
               "
             >
-              Contact via WhatsApp →
+              💬 Start Consultation
             </a>
           </div>
 
-          {/* 🔗 MENU */}
+          {/* COMPANY */}
           <div>
-            <h3 className="font-semibold mb-4">Menu</h3>
+            <h3 className="font-semibold mb-6">Company</h3>
 
-            <ul className="space-y-2 text-sm text-gray-400">
+            <ul className="space-y-3 text-sm text-gray-400">
               <li><Link href="/" className="hover:text-white">Home</Link></li>
               <li><Link href="/about" className="hover:text-white">About</Link></li>
               <li><Link href="/services" className="hover:text-white">Services</Link></li>
@@ -55,11 +57,11 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* 🧩 SERVICES */}
+          {/* SERVICES */}
           <div>
-            <h3 className="font-semibold mb-4">Services</h3>
+            <h3 className="font-semibold mb-6">Services</h3>
 
-            <ul className="space-y-2 text-sm text-gray-400">
+            <ul className="space-y-3 text-sm text-gray-400">
               <li>Construction</li>
               <li>Oil & Gas</li>
               <li>Hospitality</li>
@@ -68,57 +70,61 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* 📞 CONTACT */}
+          {/* CONTACT */}
           <div>
-            <h3 className="font-semibold mb-4">Contact</h3>
+            <h3 className="font-semibold mb-6">Contact</h3>
 
-            <p className="text-sm text-gray-400">
-              📍 Jakarta, Indonesia
-            </p>
+            <div className="space-y-3 text-sm text-gray-400">
+              <p>📍 Jakarta, Indonesia</p>
+              <p>✉️ info@fahadmanpower.com</p>
+              <p>📞 +62 812 3456 7890</p>
 
-            <p className="text-sm text-gray-400 mt-2">
-              ✉️ info@fahadmanpower.com
-            </p>
-
-            <p className="text-sm text-gray-400 mt-2">
-              📞 +62 812 3456 7890
-            </p>
+              <p className="text-xs text-gray-500 pt-4">
+                Available for global recruitment partnerships.
+              </p>
+            </div>
           </div>
 
         </div>
+
       </div>
 
-    {/* 🔻 BOTTOM */}
-    <div className="border-t border-white/10 bg-gray-950 relative z-10">
-    <div className="
-        container py-8
-        flex flex-col md:flex-row
-        justify-between items-center
-        gap-4
-    ">
+      {/* 🔻 BOTTOM BAR */}
+      <div className="relative z-10 mt-10 border-t border-white/10 bg-gray-950">
 
-        {/* COPYRIGHT */}
-        <p className="
-        text-base md:text-sm
-        text-white/70
-        font-medium
-        tracking-wide
+        <div className="
+          container py-8 md:py-10
+          flex flex-col md:flex-row
+          justify-between items-center
+          gap-5
         ">
-        © {new Date().getFullYear()} Fahad Manpower. All rights reserved.
-        </p>
 
-        {/* LINKS */}
-        <div className="flex gap-6 text-sm text-white/60">
-        <Link href="#" className="hover:text-white transition">
-            Privacy Policy
-        </Link>
-        <Link href="#" className="hover:text-white transition">
-            Terms
-        </Link>
+          {/* LEFT */}
+          <p className="text-sm text-white/60">
+            © {new Date().getFullYear()} Fahad Manpower
+          </p>
+
+          {/* CENTER */}
+          <div className="text-sm text-white/50 text-center">
+            Design by{" "}
+            <a
+              href="https://ditelaga.digital"
+              target="_blank"
+              className="text-[var(--primary)] hover:underline"
+            >
+              Ditelaga Creative Digital
+            </a>
+          </div>
+
+          {/* RIGHT */}
+          <div className="flex gap-6 text-sm pb-10 text-white/50">
+            <Link href="#" className="hover:text-white transition">Privacy</Link>
+            <Link href="#" className="hover:text-white transition">Terms</Link>
+          </div>
+
         </div>
 
-    </div>
-    </div>
+      </div>
 
     </footer>
   );

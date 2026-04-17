@@ -1,7 +1,6 @@
 "use client";
 
 import { motion } from "framer-motion";
-import Section from "@/components/ui/Section";
 
 const items = [
   {
@@ -28,66 +27,142 @@ const items = [
 
 export default function WhyChooseUs() {
   return (
-    <Section
-      title={
-        <>
-          Why Choose <span className="text-[var(--primary)]">Us</span>
-        </>
-      }
-      subtitle="We deliver value through professionalism, speed, and trust"
-      center
-    >
-      <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mt-14">
+    <section className="relative py-28 overflow-hidden">
 
-        {items.map((item, i) => (
-          <motion.div
-            key={i}
-            initial={{ opacity: 0, y: 40 }}
+      {/* 🔵 BACKGROUND */}
+      <div className="absolute inset-0 bg-[var(--bg)]" />
+
+      {/* ✨ GLOW */}
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_20%,rgba(14,165,233,0.08),transparent_50%)]" />
+
+      <div className="container relative z-10">
+
+        {/* 🔥 HEADER */}
+        <div className="text-center max-w-2xl mx-auto">
+
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ delay: i * 0.15 }}
-            viewport={{ once: true }}
-            whileHover={{ y: -8 }}
+            className="text-sm uppercase tracking-[0.3em] text-[var(--primary)] mb-4"
+          >
+            WHY CHOOSE US
+          </motion.p>
+
+          <motion.h2
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            className="text-3xl md:text-4xl font-bold"
+          >
+            Why Companies Trust{" "}
+            <span className="text-[var(--primary)]">Fahad Manpower</span>
+          </motion.h2>
+
+          <motion.p
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            className="mt-4 text-muted"
+          >
+            We combine professionalism, speed, and global reach to deliver
+            workforce solutions that drive business success.
+          </motion.p>
+
+        </div>
+
+        {/* 🔥 GRID */}
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mt-16">
+
+          {items.map((item, i) => (
+            <motion.div
+              key={i}
+              initial={{ opacity: 0, y: 60 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ delay: i * 0.15 }}
+              viewport={{ once: true }}
+              whileHover="hover"
+              className="
+                relative p-8 rounded-2xl
+                bg-white
+                border border-[var(--border)]
+                shadow-sm
+                overflow-hidden
+                group
+              "
+            >
+
+              {/* ✨ ICON WRAPPER */}
+              <motion.div
+                variants={{
+                  hover: { scale: 1.15, rotate: 5 },
+                }}
+                className="
+                  w-14 h-14 flex items-center justify-center
+                  rounded-xl
+                  bg-[var(--primary)]/10
+                  text-2xl mb-6
+                "
+              >
+                {item.icon}
+              </motion.div>
+
+              {/* TITLE */}
+              <h3 className="font-semibold text-lg mb-2">
+                {item.title}
+              </h3>
+
+              {/* DESC */}
+              <p className="text-sm text-muted leading-relaxed">
+                {item.desc}
+              </p>
+
+              {/* 🔥 TOP LINE */}
+              <div className="
+                absolute top-0 left-0 w-0 h-[3px]
+                bg-[var(--primary)]
+                group-hover:w-full
+                transition-all duration-300
+              " />
+
+              {/* ✨ GLOW HOVER */}
+              <div className="
+                absolute inset-0 opacity-0
+                group-hover:opacity-100
+                bg-[var(--primary)]/5
+                transition
+              " />
+
+            </motion.div>
+          ))}
+
+        </div>
+
+        {/* 🔻 CTA MINI */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          className="text-center mt-20"
+        >
+          <p className="text-muted mb-4">
+            Ready to build your workforce with us?
+          </p>
+
+          <a
+            href="https://wa.me/6281234567890"
+            target="_blank"
             className="
-              card group relative text-center
-              overflow-hidden
+              inline-block
+              px-6 py-3 rounded-xl
+              bg-[var(--primary)]
+              text-white
+              font-medium
+              hover:bg-[var(--primary-dark)]
+              transition
             "
           >
-
-            {/* ICON */}
-            <div className="text-4xl mb-4">
-              {item.icon}
-            </div>
-
-            {/* TITLE */}
-            <h3 className="font-semibold text-lg mb-2">
-              {item.title}
-            </h3>
-
-            {/* DESC */}
-            <p className="text-sm text-muted leading-relaxed">
-              {item.desc}
-            </p>
-
-            {/* HOVER LINE */}
-            <div className="
-              absolute bottom-0 left-0 w-0 h-[3px]
-              bg-[var(--primary)]
-              group-hover:w-full
-              transition-all duration-300
-            " />
-
-            {/* HOVER GLOW */}
-            <div className="
-              absolute inset-0 opacity-0
-              group-hover:opacity-100
-              bg-[var(--primary)]/5
-              transition
-            " />
-
-          </motion.div>
-        ))}
+            Contact Us →
+          </a>
+        </motion.div>
 
       </div>
-    </Section>
+    </section>
   );
 }

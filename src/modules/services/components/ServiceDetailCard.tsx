@@ -15,20 +15,20 @@ export default function ServiceDetailCard({
 }: Props) {
   return (
     <motion.div
-      initial={{ opacity: 0, y: 50 }}
+      initial={{ opacity: 0, y: 60 }}
       whileInView={{ opacity: 1, y: 0 }}
-      transition={{ delay: index * 0.1 }}
+      transition={{ delay: index * 0.08 }}
       viewport={{ once: true }}
       whileHover={{ y: -10 }}
       className="
-        relative group rounded-2xl p-6
-        bg-[var(--card)]
-        border border-[var(--border)]
+        relative group rounded-2xl p-7
+        bg-white/70 backdrop-blur-md
+        border border-white/20
         overflow-hidden
         transition-all duration-300
       "
     >
-      {/* 🔥 TOP GRADIENT LINE */}
+      {/* 🔥 TOP ACCENT LINE */}
       <div className="
         absolute top-0 left-0 h-[3px] w-0
         bg-gradient-to-r from-[var(--primary)] to-[var(--primary-light)]
@@ -36,55 +36,72 @@ export default function ServiceDetailCard({
         transition-all duration-500
       " />
 
-      {/* ✨ BACKGROUND GLOW */}
+      {/* ✨ SOFT GRADIENT GLOW */}
       <div className="
         absolute inset-0 opacity-0
         group-hover:opacity-100
         bg-[radial-gradient(circle_at_50%_0%,rgba(14,165,233,0.08),transparent_60%)]
-        transition
+        transition duration-500
       " />
 
-      {/* 🧩 ICON (AUTO BASED ON TITLE) */}
-      <div className="text-3xl mb-4">
+      {/* 💎 ICON BADGE */}
+      <div className="
+        w-12 h-12 flex items-center justify-center
+        rounded-xl
+        bg-[var(--primary)]/10
+        text-[var(--primary)]
+        text-xl
+        mb-5
+        group-hover:scale-110
+        transition
+      ">
         {getIcon(title)}
       </div>
 
       {/* 🏷️ TITLE */}
-      <h3 className="text-xl font-semibold mb-2">
+      <h3 className="text-xl font-semibold mb-3">
         {title}
       </h3>
 
       {/* 📝 DESCRIPTION */}
-      <p className="text-muted leading-relaxed">
+      <p className="text-muted leading-relaxed text-sm">
         {description}
       </p>
 
-      {/* 🔘 MINI CTA */}
-      <div className="mt-4 text-sm text-[var(--primary)] font-medium opacity-0 group-hover:opacity-100 transition">
-        Learn more →
+      {/* 🔘 CTA */}
+      <div className="
+        mt-6 flex items-center gap-2
+        text-sm font-medium
+        text-[var(--primary)]
+        opacity-0 translate-y-2
+        group-hover:opacity-100 group-hover:translate-y-0
+        transition
+      ">
+        <span>Learn more</span>
+        <span className="group-hover:translate-x-1 transition">→</span>
       </div>
 
-      {/* 🔥 SHADOW HOVER */}
+      {/* 🔥 DEPTH SHADOW */}
       <div className="
         absolute inset-0 rounded-2xl
-        shadow-[0_20px_40px_rgba(0,0,0,0.05)]
+        shadow-[0_20px_50px_rgba(0,0,0,0.08)]
         opacity-0 group-hover:opacity-100
-        transition
+        transition duration-500
       " />
     </motion.div>
   );
 }
 
-/* 🎯 ICON MAPPING (AUTO) */
+/* 🎯 ICON MAPPING (UPGRADE) */
 function getIcon(title: string) {
   const map: Record<string, string> = {
-    "Construction": "🏗️",
-    "Oil & Gas": "🛢️",
+    "Construction": "🏗",
+    "Oil & Gas": "⚙️",
     "Hospitality": "🏨",
     "Cruise Crew": "🚢",
     "Medical": "🏥",
     "General Recruitment": "👷",
   };
 
-  return map[title] || "⚙️";
+  return map[title] || "⚡";
 }

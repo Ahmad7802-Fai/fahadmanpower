@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import { motion } from "framer-motion";
 
 interface Props {
   title: string;
@@ -9,54 +10,95 @@ interface Props {
 
 export default function IndustryCard({ title, image }: Props) {
   return (
-    <div
+    <motion.div
+      whileHover="hover"
+      initial="rest"
+      animate="rest"
       className="
-        relative h-56 rounded-2xl overflow-hidden
+        relative h-60 rounded-2xl overflow-hidden
         group cursor-pointer
       "
     >
-      {/* IMAGE */}
-      <Image
-        src={image}
-        alt={title}
-        fill
-        className="
-          object-cover
-          group-hover:scale-110
-          transition duration-500
-        "
-      />
+      {/* 🖼 IMAGE */}
+      <motion.div
+        variants={{
+          rest: { scale: 1 },
+          hover: { scale: 1.12 },
+        }}
+        transition={{ duration: 0.6, ease: "easeOut" }}
+        className="absolute inset-0"
+      >
+        <Image
+          src={image}
+          alt={title}
+          fill
+          className="object-cover"
+        />
+      </motion.div>
 
-      {/* DARK OVERLAY */}
-      <div className="absolute inset-0 bg-black/50" />
+      {/* 🌑 DARK BASE */}
+      <div className="absolute inset-0 bg-black/40" />
 
-      {/* BLUE GRADIENT */}
+      {/* 🔵 BRAND GRADIENT */}
       <div className="
         absolute inset-0
         bg-gradient-to-t
-        from-[var(--primary)]/70
+        from-[var(--primary)]/80
         via-transparent
         to-transparent
-        opacity-80
       " />
 
-      {/* CONTENT */}
+      {/* ✨ CINEMATIC LIGHT (TOP) */}
       <div className="
-        absolute bottom-4 left-4 right-4
-        text-white
-      ">
-        <h3 className="font-semibold text-lg">
+        absolute inset-0 opacity-0 group-hover:opacity-100
+        transition duration-500
+        bg-[radial-gradient(circle_at_50%_0%,rgba(255,255,255,0.2),transparent_60%)]
+      " />
+
+      {/* ✨ SIDE LIGHT */}
+      <div className="
+        absolute inset-0 opacity-0 group-hover:opacity-100
+        transition duration-700
+        bg-[radial-gradient(circle_at_80%_50%,rgba(14,165,233,0.3),transparent_60%)]
+      " />
+
+      {/* 📦 CONTENT */}
+      <div className="absolute bottom-6 left-6 right-6 text-white">
+
+        {/* TITLE */}
+        <motion.h3
+          variants={{
+            rest: { y: 0 },
+            hover: { y: -8 },
+          }}
+          transition={{ duration: 0.4 }}
+          className="text-lg font-semibold"
+        >
           {title}
-        </h3>
+        </motion.h3>
+
+        {/* SUB TEXT (REVEAL) */}
+        <motion.p
+          variants={{
+            rest: { opacity: 0, y: 10 },
+            hover: { opacity: 1, y: 0 },
+          }}
+          transition={{ duration: 0.4 }}
+          className="text-sm text-white/80 mt-2"
+        >
+          Professional workforce solutions
+        </motion.p>
+
       </div>
 
-      {/* HOVER EFFECT */}
+      {/* 🔥 BORDER GLOW */}
       <div className="
-        absolute inset-0
-        opacity-0 group-hover:opacity-100
+        absolute inset-0 rounded-2xl
+        border border-white/10
+        group-hover:border-[var(--primary)]/40
         transition
-        bg-white/10
       " />
-    </div>
+
+    </motion.div>
   );
 }

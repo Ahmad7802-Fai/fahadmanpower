@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 
-const info = [
+const items = [
   {
     title: "Address",
     value: "Jakarta, Indonesia",
@@ -15,36 +15,47 @@ const info = [
   },
   {
     title: "Phone",
-    value: "+62 812-3456-7890",
+    value: "+62 812 3456 7890",
     icon: "📞",
   },
 ];
 
 export default function ContactInfo() {
   return (
-    <section className="relative -mt-20 z-20">
-      <div className="container">
-        <div className="grid md:grid-cols-3 gap-6">
+    <div className="relative -mt-20 z-20 container">
 
-          {info.map((item, i) => (
-            <motion.div
-              key={i}
-              whileHover={{ y: -6 }}
-              className="
-                card text-center
-                backdrop-blur-md
-                bg-white/70
-              "
-            >
-              <div className="text-2xl mb-3">{item.icon}</div>
+      <div className="grid md:grid-cols-3 gap-6">
 
-              <h3 className="font-semibold">{item.title}</h3>
-              <p className="text-muted mt-1">{item.value}</p>
-            </motion.div>
-          ))}
+        {items.map((item, i) => (
+          <motion.div
+            key={i}
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ delay: i * 0.1 }}
+            viewport={{ once: true }}
+            whileHover={{ y: -8 }}
+            className="
+              bg-white rounded-2xl p-6 text-center
+              shadow-lg border border-gray-100
+              group
+            "
+          >
+            <div className="text-2xl mb-3">
+              {item.icon}
+            </div>
 
-        </div>
+            <h3 className="font-semibold">
+              {item.title}
+            </h3>
+
+            <p className="text-sm text-muted mt-1">
+              {item.value}
+            </p>
+          </motion.div>
+        ))}
+
       </div>
-    </section>
+
+    </div>
   );
 }

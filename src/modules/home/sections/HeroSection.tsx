@@ -105,8 +105,8 @@ export default function HeroSection() {
               }}
               className="mt-6 flex flex-wrap gap-4 text-sm text-white/80"
             >
-              <span>✔ 500+ Workers Deployed</span>
-              <span>✔ 50+ Global Clients</span>
+              <span>✔ 2000+ Workers Deployed</span>
+              <span>✔ 150+ Global Clients</span>
               <span>✔ Fast Recruitment</span>
             </motion.div>
 
