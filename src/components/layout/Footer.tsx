@@ -76,7 +76,7 @@ export default function Footer() {
 
             <div className="space-y-3 text-sm text-gray-400">
               <p>📍 Jakarta, Indonesia</p>
-              <p>✉️ info@fahadmanpower.com</p>
+              <p>✉️ info@fahadrecruitmen.com</p>
               <p>📞 +6221-29361198</p>
 
               <p className="text-xs text-gray-500 pt-4">
