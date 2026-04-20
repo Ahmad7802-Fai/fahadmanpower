@@ -12,9 +12,9 @@ const items = [
   },
   {
     title: "Email",
-    value: "info@fahadmanpower.com",
+    value: "info@fahadrecruitmen.com",
     icon: "✉️",
-    link: "mailto:info@fahadmanpower.com",
+    link: "mailto:info@fahadrecruitmen.com",
   },
   {
     title: "Phone",
